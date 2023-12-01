@@ -16,12 +16,11 @@ def getContent(video_url):
             beautyContent=''
             for elem in content:
                 beautyContent += " "+ elem['text']
-            print('yes')
             return beautyContent
         except:
             mssg = "-The subtitles may not be available for this video.\n-The video may no longer be available"
-            print( "Bad Request :( \n"+mssg)
+            return "Bad Request :( \n"+mssg
     except:
         mssg = "-The subtitles may not be available for this video.\n-The video may no longer be available"
-        print( "Bad Request :( \n"+mssg)
+        return "Bad Request :( \n"+mssg
    
