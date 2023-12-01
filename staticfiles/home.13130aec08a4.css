@@ -1,0 +1,113 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: black;
+    display:flex;
+    height: 100vh;
+    justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    overflow: hidden; 
+}
+
+
+.image{
+    height: 100vmax;
+    width: 100%; 
+    position:absolute; 
+}
+
+.main{
+    width:60vw;
+    position: absolute;
+    display:flex;
+    margin-top:20vh;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+}
+
+
+.heading {
+    font-size:50px;
+}
+
+.low-main {
+    width:100%; 
+    display:flex;
+    align-items:flex-start;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.container-1 {
+    width:90%;
+    height:100px; 
+    display:flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: space-evenly;
+}
+
+
+.input {
+    width:100%;
+    height:40px;  
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:10px;   
+}
+
+@media (min-width:900px){
+    .container-1{
+        width:600px;
+        height:100px;  
+        display:flex;
+        flex-direction: column;
+        align-items:flex-end;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width:1200px){   
+    .main{
+        width:60vw;  
+        margin-left:20vw;
+        position: absolute;
+        display:flex;
+        flex-direction: column; 
+    }
+}
+
+@media (max-width:600px){
+    .heading {
+        font-size:10vw;
+    }
+}
+
+.url-input, .lang-input {
+    background-color: rgb(255, 255, 255, 0.3);
+    border:1px solid white;
+    height: 100%;
+    font-size: 20px;
+}
+
+.url-input{
+    width:85%;
+}
+
+.button_transcript {
+    background-color: black;
+    border:none;
+    font-size: 20px;
+    color:white;
+    border-radius:2px;
+    padding:10px;
+    margin-top:20px;
+
+}
+
+.transcript p{
+    color:rgb(147, 15, 15);
+    font-size: 17px;
+    margin-top:8vh;
+}

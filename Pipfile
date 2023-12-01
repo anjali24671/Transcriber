@@ -7,6 +7,7 @@ name = "pypi"
 youtube-transcript-api = "*"
 django = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
