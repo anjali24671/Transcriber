@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcriber</title>
+    <link rel="stylesheet" href="{% static 'answer.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&display=swap" rel="stylesheet">
+    <script src="{% static 'js.js' %}"></script>
+</head>
+<body>    
+    <img class='image' src="{% static '/img/background.jpg' %}">
+    <div class="container">
+        <div class="box">
+            <div class="text-box">
+                <p>{{ transcript }}</p>
+            </div>
+            <button onclick="copyToClipboard()" class="copy-button">Copy Here</button>
+        </div>
+    </div>
+</body>
+</html>

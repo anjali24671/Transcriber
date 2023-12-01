@@ -1,13 +1,25 @@
-from youtube_transcript_api import YouTubeTranscriptApi
 
-ln = input("Enter the language")
+def getContent(video_url):
+    # Preprocess
+    if video_url[29]=='?':
+        video_id = video_url[32:]
+    else:
+        video_id = video_url[17:28]
 
-try:
-    lst = YouTubeTranscriptApi.get_transcript("j8U4Y_2-JzY", languages=[ln], preserve_formatting=True)
-    text=''
-    for i in lst:
-        text += (' '+ i['text'])
-        print(text)
+    try:
+        # Call the API
+        from youtube_transcript_api import YouTubeTranscriptApi
+        content = YouTubeTranscriptApi.get_transcript(video_id)
 
-except:
-    print("ERROR: The transcript doesn't exist in this langauge")
+        # Making it look like a paragraph and not a bunch of discrete lines
+        beautyContent=''
+        for elem in content:
+            beautyContent += " "+ elem['text']
+        return beautyContent
+    except:
+        mssg = "-The subtitles may not be available for this video.\n-The video may no longer be available"
+        return "Bad Request :( \n"+mssg
+
+
+
+
