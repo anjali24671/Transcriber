@@ -1,5 +1,5 @@
 
-def getContent(video_url):
+def getContent(video_url, video_lang):
     # Preprocess
     try:
         if video_url[29]=='?':
@@ -10,7 +10,7 @@ def getContent(video_url):
         try:
             # Call the API
             from youtube_transcript_api import YouTubeTranscriptApi
-            content = YouTubeTranscriptApi.get_transcript(video_id)
+            content = YouTubeTranscriptApi.get_transcript(video_id, languages=[video_lang])
 
             # Making it look like a paragraph and not a bunch of discrete lines
             beautyContent=''

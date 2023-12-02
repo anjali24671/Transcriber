@@ -12,8 +12,10 @@ class homeView(FormView):
 
     def form_valid(self, form):
         url = form.cleaned_data['URL']
+        lang = form.cleaned_data['lang']
+        print(lang)
         from base import getContent
-        transcript = getContent(url)
+        transcript = getContent(url, lang)
         if transcript[:11]=='Bad Request':  
             return render(self.request, 'home.html', {'form':form,'transcript': transcript})
         return render(self.request, 'answer.html', {'transcript': transcript})
