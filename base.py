@@ -2,10 +2,12 @@
 def getContent(video_url, video_lang):
     # Preprocess
     try:
-        if video_url[29]=='?':
+        if video_url.find('youtube.com') > -1:
             video_id = video_url[32:]
+            print(video_id)
         else:
             video_id = video_url[17:28]
+            print(video_id)
 
         try:
             # Call the API
@@ -23,4 +25,4 @@ def getContent(video_url, video_lang):
     except:
         mssg = "-The subtitles may not be available for this video.\n-The video may no longer be available"
         return "Bad Request :( \n"+mssg
-   
+
